@@ -5,7 +5,7 @@ import Footer from './Components/Footer/Footer'
 import Home from './pages/Home'
 import About from './pages/About'
 import Contact from './pages/Contact'
-import {Route,Routes} from 'react-router-dom'
+import {HashRouter as Router, Route,Routes} from 'react-router-dom'
 import Error from './pages/Error'
 function App() {
  
@@ -14,6 +14,7 @@ function App() {
       <NavBar />
       {/* <HeroSection cardData={data}
       /> */}
+      <Router>
       <Routes>
       <Route path="/" element={<Home />} />
       <Route path="Home" element={<Home />} />
@@ -21,6 +22,7 @@ function App() {
       <Route path="/Contact" element={<Contact />} />
       <Route path="*" element={<Error />} />
     </Routes>
+    </Router>
       <Footer/>
     </div>
   )
