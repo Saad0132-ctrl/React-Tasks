@@ -1,21 +1,26 @@
 
 import './App.css'
 import NavBar from './Components/Header/NavBar'
-import HeroSection from './Components/HeroSection/HeroSection'
 import Footer from './Components/Footer/Footer'
-
+import Home from './pages/Home'
+import About from './pages/About'
+import Contact from './pages/Contact'
+import {Route,Routes} from 'react-router-dom'
+import Error from './pages/Error'
 function App() {
-  
-  let data=[
-    {title:'Card1', description:'This is Card 1', text:'Click me'},
-    {title:'Card2', description:'This is Card 2', text:'Click me'},
-    {title:'Card3', description:'This is Card 3', text:'Click me'}
-  ]
-
+ 
   return (
     <div  className="bg-gray-100 min-h-screen flex flex-col">
       <NavBar />
-      <HeroSection cardData={data}/>
+      {/* <HeroSection cardData={data}
+      /> */}
+      <Routes>
+      <Route path="/" element={<Home />} />
+      <Route path="Home" element={<Home />} />
+      <Route path="/About" element={<About/>} />
+      <Route path="/Contact" element={<Contact />} />
+      <Route path="*" element={<Error />} />
+    </Routes>
       <Footer/>
     </div>
   )

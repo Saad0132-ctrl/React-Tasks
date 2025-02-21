@@ -3,6 +3,7 @@ import Card from "../Card/Card";
 function HeroSection({cardData}) {
     // console.log(props);
     
+    
     return(
         <>
         <div className="text-center p-8">
